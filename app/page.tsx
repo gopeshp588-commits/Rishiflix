@@ -1,20 +1,10 @@
 import LoginForm from "@/components/LoginForm";
+import BackgroundPosters from "@/components/BackgroundPosters";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full flex flex-col">
-      {/* Cinematic gradient background — replace with a real Image once you have an asset */}
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(135deg, #0d0d0d 0%, #1a0a0a 30%, #0d0a1a 60%, #0a0d0d 100%)",
-        }}
-        aria-hidden="true"
-      >
-        {/* Subtle vignette */}
-        <div className="absolute inset-0 bg-black/50" />
-      </div>
+      <BackgroundPosters />
 
       {/* Navbar */}
       <header className="sticky top-0 z-50 flex items-center justify-between px-6 sm:px-12 py-6 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm">
@@ -30,7 +20,7 @@ export default function Home() {
       </header>
 
       {/* Login Card */}
-      <section className="flex flex-1 items-center justify-center px-4 py-10">
+      <section className="relative z-10 flex flex-1 items-center justify-center px-4 py-10">
         <div className="w-full max-w-md bg-black/75 rounded-lg px-8 sm:px-10 py-12 backdrop-blur-sm">
           <h1 className="text-3xl font-bold text-white mb-8">Sign In</h1>
 
@@ -54,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black/75 text-[#737373] text-xs px-6 sm:px-12 py-10 mt-auto border-t border-[#222]">
+      <footer className="relative z-10 bg-black/75 text-[#737373] text-xs px-6 sm:px-12 py-10 mt-auto border-t border-[#222]">
         <p className="mb-4">Questions? Call 1-800-RISHIFLIX</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           {[

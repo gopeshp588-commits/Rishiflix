@@ -24,3 +24,19 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff !important;
   caret-color: #fff;
 }
+
+/* ── Poster Marquee Animations ── */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee-left {
+  animation: marquee-left 55s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 55s linear infinite;
+}
