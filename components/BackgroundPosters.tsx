@@ -29,6 +29,12 @@ const POSTERS = [
   { title: "Oppenheimer",                       url: "https://image.tmdb.org/t/p/w500/ptpr0kGAckfQkJeJIt8st5dglvd.jpg" },
 ];
 
+// Proxy all TMDB images through Next.js /api/poster so the browser
+// fetches from same-origin and avoids TMDB CORS blocks.
+function posterSrc(tmdbUrl: string) {
+  return `/api/poster?url=${encodeURIComponent(tmdbUrl)}`;
+}
+
 function PosterCard({ url, title }: { url: string; title: string }) {
   const [failed, setFailed] = useState(false);
   return (
@@ -39,7 +45,7 @@ function PosterCard({ url, title }: { url: string; title: string }) {
         </div>
       ) : (
         <img
-          src={url}
+          src={posterSrc(url)}
           alt={title}
           className="w-full h-full object-cover"
           loading="eager"
